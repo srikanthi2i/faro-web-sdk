@@ -23,6 +23,14 @@ export function setReactRouterV6Dependencies(newDependencies: ReactRouterV6Depen
   Routes = newDependencies.Routes;
   useLocation = newDependencies.useLocation;
   useNavigationType = newDependencies.useNavigationType;
+
+  console.log('setReactRouterV6Dependencies', {
+    createRoutesFromChildren,
+    matchRoutes,
+    Routes,
+    useLocation,
+    useNavigationType,
+  });
 }
 
 export function setReactRouterV6SSRDependencies(newDependencies: Pick<ReactRouterV6Dependencies, 'Routes'>): void {

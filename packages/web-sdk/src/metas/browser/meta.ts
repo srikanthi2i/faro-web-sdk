@@ -29,7 +29,7 @@ export const browserMeta: MetaItem<Pick<Meta, 'browser'>> = () => {
       return undefined;
     }
 
-    if ('userAgentData' in navigator && navigator.userAgentData) {
+    if ('userAgentData' in navigator && (navigator as any).userAgentData) {
       // userAgentData in experimental (only Chrome supports it) thus TS does not ship the respective type declarations
       return (navigator as any).userAgentData.brands;
     }

@@ -3,7 +3,6 @@ import SSRProvider from 'react-bootstrap/SSRProvider';
 import { hydrateRoot } from 'react-dom/client';
 import { HelmetProvider } from 'react-helmet-async';
 import { Provider as ReduxProvider } from 'react-redux';
-import { BrowserRouter } from 'react-router-dom';
 
 import { FaroErrorBoundary } from '@grafana/faro-react';
 
@@ -19,11 +18,13 @@ hydrateRoot(
     <FaroErrorBoundary>
       <ReduxProvider store={createStore((window as any).__PRELOADED_STATE__)}>
         <HelmetProvider>
-          <BrowserRouter>
-            <SSRProvider>
-              <App />
-            </SSRProvider>
-          </BrowserRouter>
+          {/* // 2️⃣ `BrowserRouter` component removed, but the <Routes>/<Route>
+              // component below are unchanged */}
+          {/* <BrowserRouter> */}
+          <SSRProvider>
+            <App />
+          </SSRProvider>
+          {/* </BrowserRouter> */}
         </HelmetProvider>
       </ReduxProvider>
     </FaroErrorBoundary>
