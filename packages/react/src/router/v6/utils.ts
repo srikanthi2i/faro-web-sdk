@@ -8,17 +8,11 @@ export function getNumberOfUrlSegments(url: string): number {
 }
 
 export function getRouteFromLocation(routes: ReactRouterV6RouteObject[], location: ReactRouterLocation): string {
-  console.log('123', { routes, location });
-
   if (!routes || routes.length === 0) {
-    console.log('location.pathname 1 :>> ', location.pathname);
     return location.pathname;
   }
 
-  console.log('matchRoutes :>> ', matchRoutes);
-
   const matchedRoutes = matchRoutes(routes, location);
-  console.log('matchedRoutes :>> ', matchedRoutes);
 
   let pathBuilder = '';
 
@@ -50,8 +44,6 @@ export function getRouteFromLocation(routes: ReactRouterV6RouteObject[], locatio
       }
     }
   }
-
-  console.log('location.pathname 2 :>> ', location.pathname);
 
   return location.pathname;
 }
