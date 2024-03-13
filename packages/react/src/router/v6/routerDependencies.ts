@@ -3,6 +3,7 @@ import type {
   ReactRouterV6DataRouterDependencies,
   ReactRouterV6Dependencies,
   ReactRouterV6MatchRoutes,
+  ReactRouterV6NextDependencies,
   ReactRouterV6RoutesShape,
   ReactRouterV6UseLocation,
   ReactRouterV6UseNavigationType,
