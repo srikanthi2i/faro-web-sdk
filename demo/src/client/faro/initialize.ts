@@ -23,7 +23,7 @@ export function initializeFaro(): Faro {
       new TracingInstrumentation(),
       new ReactIntegration({
         router: {
-          version: ReactRouterVersion.V6_Next,
+          version: ReactRouterVersion.V6_data_api,
           dependencies: {
             // createRoutesFromChildren,
             matchRoutes,
