@@ -1,3 +1,8 @@
+// createHashRouter,
+// createMemoryRouter,
+// createBrowserRouter
+// createMemoryRouter
+
 import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } from 'react-router-dom';
 
 import { withFaroRouterInstrumentation } from '@grafana/faro-react';
