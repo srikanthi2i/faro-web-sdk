@@ -76,7 +76,7 @@ services:
   database:
     env_file:
       - './.env'
-    image: 'postgres:latest'
+    image: 'postgres:14.12'
     volumes:
       - 'db_data:/var/lib/postgresql/data'
     environment:

@@ -1,18 +1,30 @@
 import react from '@vitejs/plugin-react';
 import { defineConfig, loadEnv } from 'vite';
 
+import faroUploader from '@grafana/faro-rollup-plugin';
+
 import { getEnvConfig, getPublicEnvConfig } from './src/common';
 
 export default defineConfig(({ mode }) => {
   return {
-    plugins: [react()],
+    plugins: [
+      react(),
+      faroUploader({
+        appName: 'faro-demo',
+        endpoint: 'http://localhost:8000/faro/api/v1',
+        appId: '56',
+        orgId: '1',
+        verbose: true,
+      })
+    ],
     server: {
       watch: {
         awaitWriteFinish: true,
       },
     },
     build: {
-      minify: false,
+      minify: true,
+      sourcemap: true,
       rollupOptions: {
         output: {
           chunkFileNames(chunk) {
