@@ -1,5 +1,6 @@
 import { genShortID } from '@grafana/faro-core';
-import type { EventsAPI, PushEventOptions } from '@grafana/faro-core';
+import type { EventsAPI } from '@grafana/faro-core';
+import type {PushEventOptions} from "@grafana/faro-core/src/api/events/types";
 
 import { getItem, setItem, webStorageType } from '../../utils';
 
